@@ -1,0 +1,44 @@
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url(../Police/Roboto-Regular.ttf);
+}
+
+html {
+  font-family: 'Roboto-Regular';
+}
+
+fieldset {
+  padding-top: 1rem;
+  height: 10rem;
+  width: 30rem;
+  margin: 10rem auto auto auto;
+  color: #9356DC;
+}
+
+.btn1 {
+  padding: 1rem;
+  width: 5rem;
+  margin: 1rem auto;
+  position: absolute;
+  left: 49%;
+  background: -webkit-linear-gradient(270deg, #ca7bbc -1%, #ff79da 3%, #9356dc 100%);
+  border: transparent;
+  font-family: 'Roboto-Regular';
+  color: whitesmoke;
+}
+
+input {
+  margin: .5rem;
+}
+
+label {
+  margin-left: .5rem;
+}
+/*# sourceMappingURL=formulaire.css.map */

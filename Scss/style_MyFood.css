@@ -423,7 +423,6 @@ footer .enfant_footer a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    color: red;
     border: 1px solid blue;
   }
   .enfant_restaurant {
