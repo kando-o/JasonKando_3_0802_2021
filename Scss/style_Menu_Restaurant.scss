@@ -1,0 +1,309 @@
+// ************** RESET *************
+*, ::before,::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+        // ****************** Variable ***************
+$border:1px solid blue;
+$primaire:#9356DC;
+$secondaire:#ff79da;
+$tertiaire:#99e2d0;
+$linear:-webkit-linear-gradient(270deg, rgba(202,123,188,1) -1%, rgba(255,121,218,1) 3%, rgba(147,86,220,1) 100%);
+$fond--grisClaire: #f5f5f5 ;
+$fond--grisFoncer: #dadada;
+$shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.30);
+// **************** HTML BLOC_PAGE *********************
+html{
+    font-family: 'Roboto-Regular'
+}
+.bloc_page{
+    width: auto;
+    height: auto;
+    // border: springgreen solid;
+}
+.bloc_page::before{
+    content: "";
+    width: 100vh;
+    background: #333;
+    height: 100vh;
+}
+// ***************** FONT FAMILY / Police d'écriture ********************
+@font-face {
+    font-family: 'Shrikhand-Regular';
+    src: url(../Police/Shrikhand-Regular.otf);
+}
+@font-face {
+font-family: 'Roboto-Regular';
+src: url(../Police/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: 'robotothin';
+        src:  url('../Police/Roboto-Thin-webfont.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+// ******************** Début bloc_page ********************
+.titre{
+    text-align: center;
+    height: 3rem;
+    font-family: 'Shrikhand-Regular';
+    cursor: pointer;
+}
+.titre a{
+    text-decoration: none;
+    color: black;
+}
+// ******************** Banner ********************
+.bcground_enTete{
+    height: 15rem;
+    width: auto;
+    .image_enTete img{
+        width: 100%;
+        height: 15rem;
+        object-fit: cover;
+    }
+}
+// ******************** Grand container ********************
+.container_menu{
+    margin-top: -3rem;
+    // border: transparent solid 1px;
+    padding-top: 1.5rem;
+    position: relative;
+    border-radius: 2rem 2rem 0rem 0rem;
+    background-color: $fond--grisClaire;
+    .titre_container{
+        display: flex;
+        position: relative;
+        font-family: 'Shrikhand-Regular';
+        margin: 2rem 0rem 1.5rem 2rem;
+        &.titre_container i{
+            position: absolute;
+            right: 1rem;
+            font-size: 1.5rem;
+        }
+    }
+    // ******************** Animation Titre des Menu ********************    
+    .titre_des_menu{
+        margin: 2rem 0rem 1rem 2rem;
+        animation: translation__titre 1s ease-out;
+    }
+    @keyframes translation__titre {
+        0%{
+            transform: translateX(5rem);
+            opacity: .1;
+        }
+        100%{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    // ******************** Suite des Blocs Menu ********************
+    .titre_des_menu h3{
+        position: relative;
+        font-family: 'robotothin';
+    }
+    .titre_des_menu h3::after{
+        content: "";
+        position: absolute;
+        top: 1.6rem;
+        left: 0;
+        display: inline-block;
+        background: $tertiaire;
+        color: red;
+        width: 3rem;
+        height: .1rem;
+    }
+    .bloc_menu{
+        padding-bottom: 1rem;
+    }
+    .bloc_menu a{
+        color: black;
+        text-decoration: none;
+    }
+    // ******************** Animation des enfant BLOC Menu ********************
+    .enfant_menu{
+        border-radius: 1rem;
+        margin: 1rem 1rem;
+        padding: 1rem;
+        box-shadow: $shadow;
+        position: relative;
+        overflow: hidden;
+        animation: translation 1s ease-out;
+    }
+    @keyframes translation {
+        0%{
+            transform:translateY(5rem);
+            opacity:.1
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+    // ******************** Fin d'animation ********************
+    .fig2{
+       margin-left: -.5rem;
+       position: relative;
+    }
+    .fig2 p{
+        font-size: .9rem;
+    }
+    .para {
+        // border: $border;
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 87%;
+        transition: width;
+        transition: width .8s ease-in-out;
+        font-family: 'robotothin';
+    }
+    .prix{
+        position: relative;
+        left: 2%;
+    }
+    .h4--modif{
+        font-weight: 600;
+    }
+    .fig2--modif--h4_enchantee{
+        width: 11rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .fig2--modif--h4_delice{
+        width: 12rem;
+    }
+    .item_valider{
+        position: absolute;
+        color: black;
+        top: 0rem;
+        right: 0rem;
+        height: 6rem;
+        width: 4rem;
+        transform: translateX(10rem);
+        transition: all 1s ease-in-out;
+    }
+    .item_valider i{
+        transform: rotate(190deg);
+        transition: transform .3s ease-in-out;
+        color: white;
+    }
+    .item_valider--modif i{
+        position: absolute;
+        top:40%
+    }
+    .fa-check-circle{
+        position: absolute;
+        top: 1.7rem;
+        right: 1.4rem;
+    }
+    // ******************** Animation "fig2" "para" "prix" ********************
+    .fig2:hover + .item_valider{
+        transform: translateX(0);
+        background: $tertiaire;
+        
+    }
+    .fig2:hover + .item_valider i{
+        transform: rotate(360deg);
+    }
+    .fig2:hover .para {
+        width: 10rem;
+    }
+    // ******************** Fin d'animation ********************
+    .btn__commander{
+        display: flex;
+        justify-content: center;
+    }
+    .btn__commander a{
+        color: white;
+        text-decoration: none;
+        padding: 1rem 3rem;
+        border-radius: 2rem;
+        background: $linear;
+        margin-bottom: 1rem;
+    }
+    // ****************** FOOTER ********************
+}
+footer{
+    height: auto;
+    width: 100%;
+    background-color: #333;
+    color: whitesmoke;
+    .header_footer{
+        @extend .titre;
+        font-family: 'Shrikhand-Regular';
+        padding: 1rem;
+        text-align: start;
+    }
+    .enfant_footer{
+        padding: 1rem;
+    }
+    .enfant_footer i{
+        padding-right: 0.3rem;
+    }
+    .txt_footer {
+        padding-bottom: 1rem;
+    }
+    .txt_footer p{
+        padding-bottom: 0.3rem;
+    }
+    .enfant_footer a{
+        color: white;
+        text-decoration: none;
+    }
+}
+
+// ***************** MEDIAQUERIES **************
+
+// **************** 450PX ------------ 900PX ****************
+@media screen and (min-width:400px) and (max-width:900px){
+    .bloc_menu{
+        display: flex;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+    }
+    .enfant_menu{
+        width: 350px;
+        margin: auto;
+    }
+    .titre_des_menu{
+        width: 60%;
+        // border: $border;
+        position: relative;
+        // left: 0;
+    }
+}
+// ********************* 901PX --------------- 1900PX ****************
+@media screen and (min-width:900px){
+    .bloc_menu{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 2;
+        width: 100%;
+    } 
+    .titre_des_menu{
+        display: grid;
+        grid-row: 1;
+    }
+    .enfant_menu{
+        display: grid;
+        grid-row: 2;
+        width: 90%;
+        // border: $border;
+        margin: 0rem auto;
+    }
+}
+
+// ************* 950PX a ... ***************
+@media screen and (min-width:950px){
+    .enfant_menu{
+        width: 90%;
+    }
+}
+.prix{
+    position: relative;
+    left: 10%;
+}

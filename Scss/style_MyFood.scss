@@ -1,0 +1,322 @@
+*, ::before,::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+$border:1px solid blue;
+$primaire:#9356DC;
+$secondaire:#ff79da;
+$tertiaire:#99e2d0;
+$linear:-webkit-linear-gradient(270deg, rgba(202,123,188,1) -1%, rgba(255,121,218,1) 3%, rgba(147,86,220,1) 100%);
+$fond--grisClaire: #f5f5f5 ;
+$fond--grisFoncer: #dadada;
+$shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.30);
+
+
+html{
+    font-family: 'Roboto-Regular'
+}
+.bloc_page{
+    width: auto;
+    height: auto;
+    // border: springgreen solid;
+}
+@font-face {
+    font-family: 'Shrikhand-Regular';
+    src: url(../Police/Shrikhand-Regular.otf);
+}
+@font-face {
+font-family: 'Roboto-Regular';
+src: url(../Police/Roboto-Regular.ttf);
+}
+// ************************* Début Loader ************************
+.box__loader{
+    display: flex;
+    height: 20rem;
+    width: 20rem;
+    justify-content: center;
+    align-items: center;
+    // border: $border;
+}
+
+.items2__loader{
+    // border: $border;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // pour centrer l'animation
+}
+.loader{
+    display: block;
+    width: 15rem;
+    height: 15rem;
+    position: relative;
+    border: transparent solid;
+    border-top-color: $primaire; 
+    border-radius: 50%;
+    transition: 3s ease-out;
+    animation: rotor2 1s ease-out forwards;
+}
+.loader::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: .5rem;
+    bottom: .3rem;
+    border: transparent solid;
+    border-top-color: $tertiaire;
+    border-radius: 50%;
+    animation: rotor2 1s ease-out  forwards;
+}
+.loader::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: .5rem;
+    left: .3rem;
+    right: .3rem;
+    bottom: .3rem;
+    border: transparent solid;
+    border-top-color: $secondaire;
+    border-radius: 50%;    
+    animation: rotor2 1s ease-out   forwards;
+}
+@keyframes rotor2 {
+    0%{
+        transform: rotate(0);
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(360deg);
+        opacity: 0;
+        z-index: -1;
+    }
+}
+.loaderfinal{
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    animation: opacity2 3s ease-out  forwards;
+}
+@keyframes opacity2{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: .1;
+        z-index: -1;
+    }
+}
+.titre{
+    text-align: center;
+    height: 3rem;
+    &.titre h1{
+        font-family: 'Shrikhand-Regular';
+    }
+}
+// <!-- ********************** Début bloc Réservez ********************** -->
+.bloc_reservez{
+    width: auto;
+    height: auto;
+    padding-bottom: 2rem;
+    background-color: $fond--grisClaire;
+        .header_bloc_reservez{
+            position: relative;
+            width: 100%;
+            height: 3rem;
+            margin: auto;
+            background-color: $fond--grisFoncer;
+            &.header_bloc_reservez h2{
+                text-align: center;
+                line-height: 2.5rem;
+                font-size: 1rem; 
+            }
+            &.header_bloc_reservez i{
+                position: absolute;
+                left: 7rem;
+                top: 0.8rem ;
+                border: $border;
+            }
+        }
+        .enfant_reservez{
+            text-align: center;
+            padding: 1rem 2rem;
+                &.enfant_reservez h3{
+                    font-size: 1.5rem;
+                } 
+        }
+        .bouton_explorer{
+            margin-top: 1rem;
+            padding: 1rem;
+            background: $linear;
+            color: white ;
+            
+            box-shadow: $shadow ;
+            border-radius: 2rem;
+        }
+}
+// <!-- **********************Début Bloc Fonctionnement********************** -->
+.bloc_fonctionnement{
+    @extend .bloc_reservez;
+    background-color: white;
+    .header_fonctionnement{
+        padding: 2rem 0rem 1rem 1rem;
+    }    
+    &.bloc_fonctionnement a{
+        text-decoration: none;
+
+    }
+        .enfants_fonctionnement{
+            display: flex;
+            justify-content: center;
+            position: relative;
+            padding: 1rem;
+            background: $fond--grisClaire;
+            border-radius: 2rem;
+            margin: 1.5rem;
+            text-align: center;
+            box-shadow: $shadow;
+            &.enfants_fonctionnement p{
+                color: black;
+            }
+            &.enfants_fonctionnement:hover{
+                background-color: #f5d4f8;
+            }
+            .icon {
+                width: 1.5em;
+                height: 1.5em;
+                position: relative;
+                fill: currentColor;
+                // Pour la couleur du SVG
+                color: grey;
+                left: -3%;
+            }
+            .icon-mobile{
+                position: relative;
+                left: -4%;
+            }
+            .icon:hover{
+                color: $primaire;
+
+            }
+            
+            .nombre--enfants{
+                position: absolute;
+                height: 1.5rem;
+                width: 1.5rem;
+                left: -0.5rem;
+                bottom: 0.9rem;
+                padding: 0.1rem;
+                border-radius: 50%;
+                color:white;
+                background-color: $primaire
+            } 
+        }
+
+    
+}
+// <!-- **********************Début Bloc Restaurant Bottom ********************** -->
+.bloc_restaurant_bott{
+    @extend .bloc_reservez;
+    background-color: $fond--grisClaire;
+    &.bloc_restaurant_bott a{
+        text-decoration: none;
+        color: black;
+    }
+        .header_restauraut_bott{
+            padding: 2rem 0rem 1rem 1rem;
+        
+        }
+        .enfant_restaurant{
+            position: relative;
+            width: 90%;
+            height: 15rem;
+            margin: 1rem auto;
+            overflow: hidden;
+            background-color: white;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: $shadow;
+                &.enfant_restaurant img{
+                    width: 100%;
+                    height: 95%;
+                    object-fit: cover;
+                }
+                &.enfant_restaurant h3, p{
+                    padding: 0rem 0rem 0rem 1rem;
+                }
+                .enfant_restaurant--taille{
+                    height: 11.5rem;
+                }
+                .enfant_restaurant--span{
+                    position: absolute;
+                    color: green;
+                    right: 5%;
+                    top: 1rem;
+                    padding: 0.5rem;
+                    background-color: $tertiaire;
+                    border-radius: 0.2rem;
+                    transform: scale(1);
+                    transition: transform .5s ease-in-out;
+                }
+                .enfant_restaurant--span:hover{
+                    transform: scale(1.2);
+                }
+                &.enfant_restaurant i{
+                    position: relative;
+                    font-size: 1.7rem;
+                    left: 80%;
+                    bottom: 2.5rem;
+                    color: #e7e7e7;
+                    transform: scale(1);
+                    transition:  transform .5s ease-in-out;
+                }
+                &.enfant_restaurant i:hover{
+                    color: #b485ee;
+                    transform: scale(1.3);
+                }
+        }
+}
+footer{
+    height: auto;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    .header_footer h2{
+        padding: 1.5rem;
+        font-family: 'Shrikhand-Regular';
+    }
+    .enfant_footer{
+        padding: 0rem 0rem 0.5rem 1.5rem;
+    }
+    .enfant_footer i{
+        padding-right: 0.5rem;
+    }
+    .enfant_footer p{
+        padding-bottom: 0.5rem;
+    }
+    .enfant_footer a{
+        text-decoration: none;
+        color:white;
+    }
+
+}
