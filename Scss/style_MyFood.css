@@ -423,11 +423,9 @@ footer .enfant_footer a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    border: 1px solid blue;
   }
   .enfant_restaurant {
     width: 70%;
-    border: 1px solid blue;
   }
 }
 /*# sourceMappingURL=style_MyFood.css.map */
