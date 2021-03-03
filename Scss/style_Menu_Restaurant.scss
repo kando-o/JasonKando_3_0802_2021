@@ -45,14 +45,25 @@ src: url(../Police/Roboto-Regular.ttf);
 }
 // ******************** Début bloc_page ********************
 .titre{
-    text-align: center;
-    height: 3rem;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 4rem;
     font-family: 'Shrikhand-Regular';
     cursor: pointer;
+}
+.titre h1{
+    margin-top: 1rem;
+
 }
 .titre a{
     text-decoration: none;
     color: black;
+}
+.titre i{
+    position: absolute;
+    left: 2rem;
+    top: 1.2rem;
 }
 // ******************** Banner ********************
 .bcground_enTete{
@@ -235,7 +246,7 @@ footer{
         @extend .titre;
         font-family: 'Shrikhand-Regular';
         padding: 1rem;
-        text-align: start;
+        justify-content: start;
     }
     .enfant_footer{
         padding: 1rem;
@@ -306,4 +317,9 @@ footer{
 .prix{
     position: relative;
     left: 10%;
+}
+@media screen and (min-width:1300px){
+    .enfant_menu{
+        width: 75%;
+    }
 }

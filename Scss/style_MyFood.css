@@ -211,9 +211,8 @@ html {
 
 .bloc_reservez .header_bloc_reservez.header_bloc_reservez i, .bloc_fonctionnement .header_bloc_reservez.header_bloc_reservez i, .bloc_restaurant_bott .header_bloc_reservez.header_bloc_reservez i {
   position: absolute;
-  left: 7rem;
+  left: 29%;
   top: 0.8rem;
-  border: 1px solid blue;
 }
 
 .bloc_reservez .enfant_reservez, .bloc_fonctionnement .enfant_reservez, .bloc_restaurant_bott .enfant_reservez {
@@ -255,10 +254,11 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  padding: 1rem;
+  width: 90%;
+  padding: 1rem 0rem;
   background: #f5f5f5;
   border-radius: 2rem;
-  margin: 1.5rem;
+  margin: 1.5rem auto;
   text-align: center;
   -webkit-box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.3);
           box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.3);
@@ -391,7 +391,7 @@ footer {
   color: white;
 }
 
-footer .header_footer h2 {
+footer .header_footer {
   padding: 1.5rem;
   font-family: 'Shrikhand-Regular';
 }
@@ -411,5 +411,24 @@ footer .enfant_footer p {
 footer .enfant_footer a {
   text-decoration: none;
   color: white;
+}
+
+@media screen and (min-width: 450px) {
+  .header_bloc_reservez i {
+    position: absolute;
+    left: 20%;
+  }
+  .enfants_fonctionnement {
+    width: 70%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: red;
+    border: 1px solid blue;
+  }
+  .enfant_restaurant {
+    width: 70%;
+    border: 1px solid blue;
+  }
 }
 /*# sourceMappingURL=style_MyFood.css.map */
