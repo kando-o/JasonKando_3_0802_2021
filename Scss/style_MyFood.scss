@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 $border:1px solid blue;
 $primaire:#9356DC;
 $secondaire:#ff79da;
@@ -12,14 +13,15 @@ $fond--grisClaire: #f5f5f5 ;
 $fond--grisFoncer: #dadada;
 $shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.30);
 
-
 html{
     font-family: 'Roboto-Regular'
 }
 .bloc_page{
-    width: auto;
-    height: auto;
-    // border: springgreen solid;
+    margin: 0 auto;
+}
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
 }
 @font-face {
     font-family: 'Shrikhand-Regular';
@@ -29,6 +31,7 @@ html{
 font-family: 'Roboto-Regular';
 src: url(../Police/Roboto-Regular.ttf);
 }
+
 // ************************* Début Loader ************************
 .box__loader{
     display: flex;
@@ -38,15 +41,12 @@ src: url(../Police/Roboto-Regular.ttf);
     align-items: center;
     // border: $border;
 }
-
 .items2__loader{
-    // border: $border;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    // pour centrer l'animation
 }
 .loader{
     display: block;
@@ -70,7 +70,7 @@ src: url(../Police/Roboto-Regular.ttf);
     border: transparent solid;
     border-top-color: $tertiaire;
     border-radius: 50%;
-    animation: rotor2 1s ease-out  forwards;
+    animation: rotor2 4s ease-out forwards;
 }
 .loader::after{
     content: "";
@@ -83,7 +83,7 @@ src: url(../Police/Roboto-Regular.ttf);
     border: transparent solid;
     border-top-color: $secondaire;
     border-radius: 50%;    
-    animation: rotor2 1s ease-out   forwards;
+    animation: rotor2 3s ease-out forwards;
 }
 @keyframes rotor2 {
     0%{
@@ -141,19 +141,20 @@ src: url(../Police/Roboto-Regular.ttf);
     background-color: $fond--grisClaire;
         .header_bloc_reservez{
             position: relative;
+            display: flex;
+            align-content: center;
+            align-items: center;
             width: 100%;
             height: 3rem;
-            margin: auto;
             background-color: $fond--grisFoncer;
             &.header_bloc_reservez h2{
-                text-align: center;
-                line-height: 2.5rem;
-                font-size: 1rem; 
+                margin: 0 auto;
+                font-size: 1.5rem; 
             }
-            &.header_bloc_reservez i{
-                position: absolute;
-                left: 29%;
-                top: 0.8rem ;
+            &.header_bloc_reservez img{
+                height: 70%;
+                border: #333 solid;
+                
             }
         }
         .enfant_reservez{
@@ -183,11 +184,11 @@ src: url(../Police/Roboto-Regular.ttf);
     &.bloc_fonctionnement a{
         text-decoration: none;
     }
-        .enfants_fonctionnement{
+    .enfants_fonctionnement{
+            max-width: 500px;
             display: flex;
             justify-content: center;
             position: relative;
-            width: 90%;
             padding: 1rem 0rem;
             background: $fond--grisClaire;
             border-radius: 2rem;
@@ -229,27 +230,33 @@ src: url(../Police/Roboto-Regular.ttf);
             } 
         }
 }
+.header_restauraut_bott{
+    width: 100%;
+}
 // <!-- **********************Début Bloc Restaurant Bottom ********************** -->
-.bloc_restaurant_bott{
-    @extend .bloc_reservez;
-    background-color: $fond--grisClaire;
+.bloc_restaurant_bott{ 
+    box-shadow: $shadow;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
     &.bloc_restaurant_bott a{
         text-decoration: none;
         color: black;
     }
         .header_restauraut_bott{
             padding: 2rem 0rem 1rem 1rem;
-        
         }
         .enfant_restaurant{
             position: relative;
-            width: 90%;
+            max-width: 40%;
+            min-width: 300px;
             height: 15rem;
             margin: 1rem auto;
             overflow: hidden;
             background-color: white;
             border-radius: 2rem;
-            overflow: hidden;
             box-shadow: $shadow;
                 &.enfant_restaurant img{
                     width: 100%;
@@ -292,8 +299,8 @@ src: url(../Police/Roboto-Regular.ttf);
         }
 }
 footer{
-    height: auto;
     width: 100%;
+
     background-color: #333;
     color: white;
     .header_footer{
@@ -319,14 +326,18 @@ footer{
     .header_bloc_reservez i{
         position: absolute;
         left: 20%;
+        
     }
     .enfants_fonctionnement{
         width: 70%;
         justify-content: center;
-        // border: $border;
     }
     .enfant_restaurant{
         width: 70%;
-        // border: $border;
+    }
+}
+@media screen and (min-width : 1450px) {
+    footer{
+        text-align: center;
     }
 }
